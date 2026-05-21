@@ -17,16 +17,22 @@ Outputs:
 - current scoreboard
 - roll again?
 """
+# import random library
 import random
 
+# collect user name and define global variables
 user_name = input("User name: ")
 user_score = 0
 computer_score = 0
 
+
+# function definitions
 def dice_roll():
+    # returns a random whole number between 1 and 6
     return random.choice([1,2,3,4,5,6])
 
 def compare_scores(user_roll, computer_roll):
+    # determines the winner of the round based on random rolls
     if user_roll > computer_roll:
         return "You win!"
     elif computer_roll > user_roll:
@@ -35,9 +41,11 @@ def compare_scores(user_roll, computer_roll):
         return "It's a tie!"
 
 def scoreboard():
+    # returns the running total of round winners
     print(f"Scoreboard - {user_name}: {user_score}, Computer: {computer_score}")
 
-
+# play the game
+# scores and scoreboard are returned immediately, and the user can choose to play another round or end the game
 roll_again = "yes"
 while roll_again == "yes":
     user_roll = dice_roll()
