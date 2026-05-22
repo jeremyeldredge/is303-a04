@@ -50,7 +50,7 @@ roll_again = "yes"
 while roll_again == "yes":
     user_roll = dice_roll()
     computer_roll = dice_roll()
-    print(f"You rolled a {user_roll} and the computer rolled a {computer_roll}")
+    print(f"\nYou rolled a {user_roll} and the computer rolled a {computer_roll}")
     winner = compare_scores(user_roll, computer_roll)
     print(winner)
     if winner == "You win!":

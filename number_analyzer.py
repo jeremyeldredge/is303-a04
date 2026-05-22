@@ -47,24 +47,25 @@ def append_numbers(number_of_numbers):
 
 def number_analysis(numbers):
     mean = statistics.mean(numbers)
-    max = max(numbers)
-    min = min(numbers)
-    list_range = range(numbers)
+    num_max = max(numbers)
+    num_min = min(numbers)
+    list_range = num_max - num_min
     for number in numbers:
         count_above_mean = 0
         if number > mean:
             count_above_mean += 1
-    return mean, max, min, list_range
+    return mean, num_max, num_min, list_range, count_above_mean
     
     
 num_numbers = get_positive_int("How many numbers would you like to enter? ")
-append_numbers(num_numbers)
+numbers = append_numbers(num_numbers)
+mean, num_max, num_min, list_range, count_above_mean = number_analysis(numbers)
 
 print("=" * 30)
 print("Numbers Report")
 print("=" * 30)
 print(f"Mean: {mean}")
-print(f"Max: {max}")
-print(f"Min: {min}")
+print(f"Max: {num_max}")
+print(f"Min: {num_min}")
 print(f"Range: {list_range}")
 print(f"Count above mean: {count_above_mean}")
